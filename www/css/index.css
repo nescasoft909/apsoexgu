@@ -116,7 +116,7 @@ h1 {
 
 /*Modificaciones para app*/
 .ui-page {
-    background:  transparent url(../img/concierto.jpg) no-repeat center center fixed; 
+    background:  transparent url(../img/concierto.jpg) no-repeat center center; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
