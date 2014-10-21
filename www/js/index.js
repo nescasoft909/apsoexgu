@@ -47,3 +47,20 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+//funciones
+function go_to(direccion){
+    
+    if(direccion =="login"){
+            /*$.ajax({
+                type: "POST",
+                url: 'login.html',
+                //data: formData,
+                success: function (data) {
+                    $("#content-page").html(data);
+                }
+            });*/
+        $.mobile.changePage( "login.html", { transition: "flip" });
+    }
+}
+

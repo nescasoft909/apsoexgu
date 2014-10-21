@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <!--meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /-->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=high-dpi"/>
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="libs/jquery/jquery.mobile-1.4.4.min.css" />
+        <link rel="stylesheet" type="text/css" href="libs/metroui/metro-bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="libs/metroui/metro-bootstrap-responsive.min.css" />
+        <link rel="stylesheet" type="text/css" href="libs/metroui/iconFont.min.css" />
+        <title>ExpoGuayaquil</title>
+    </head>
+    <body class="metro"> 
+        <div id="content-page" class="ametrocontenido container">
+            <!--div class="tile-area no-desktop" style="width: 1774px;">
+                <!--h1 class="tile-area-title fg-white">ExpoGuayaquil - main</h1>
+            <!--div class="user-id">
+                <div class="user-id-image">
+                    <span class="icon-user no-display1"></span>
+                    <img src="images/Battlefield_4_Icon.png" class="no-display">
+                </div>
+                <div class="user-id-name">
+                    <span class="first-name">Sergey</span>
+                    <span class="last-name">Pimenov</span>
+                </div>
+            </div>
+            </div-->
+            <header class="bg-dark">
+            <div class="navigation-bar dark">
+                <div class="navigation-bar-content container">
+                    <a href="/" class="element"><span class="icon-grid-view"></span> EXPOGUAYAQUIL</a>
+                    <span class="element-divider"></span>
+
+                    <a class="element1 pull-menu" href="#"></a>
+                    <ul class="element-menu">
+                        <li>
+                            <a title="Home" href="cambiarPagina('principal.html')" class="element place-right"><span class="icon-home"> Home</span></a>
+                        </li>
+                        <li>
+                            <a title="Perfil" href="cambiarPagina('principal.html')" class="element place-right"><span class="icon-user"> Perfil</span></a>
+                        </li>
+                        <li>
+                            <a title="Buscar" href="cambiarPagina('principal.html')" class="element place-right"><span class="icon-search"> Buscar</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </header>
+            <div class="grid no-margin">
+                <div class="row centrado" id="content-row">
+                    <div class="span7">
+                        <div class="tile-group double no-margin">
+                            <div class="tile double double-vertical live" data-role="live-tile">
+                                <div class="tile-content image"><img src="img/bose.jpg"></div>
+                                <div class="tile-content image"><img src="img/guayaquil.jpg"></div>
+                                <div class="tile-status bg-dark opacity">
+                                    <span class="name">Ahora en Instagram</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tile-group double no-margin">
+                            <div class="tile bg-darkCyan">
+                                <div class="tile-content icon">
+                                    <i class="icon-instagram"></i>
+                                </div>
+                                <div class="tile-status">
+                                    <span class="name">Instagram</span>
+                                </div>
+                            </div>
+                            <div class="tile bg-lightBlue">
+                                <div class="tile-content icon">
+                                    <i class="icon-twitter"></i>
+                                </div>
+                                <div class="tile-status">
+                                    <span class="name">Twitter</span>
+                                </div>
+                            </div>
+                            <div class="tile bg-darkBlue">
+                                <div class="tile-content icon">
+                                    <i class="icon-facebook"></i>
+                                </div>
+                                <div class="tile-status">
+                                    <span class="name">Facebook</span>
+                                </div>
+                            </div>
+                            <div class="tile bg-red">
+                                <div class="tile-content icon">
+                                    <i class="icon-youtube"></i>
+                                </div>
+                                <div class="tile-status">
+                                    <span class="name">YouTube</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4 ver-landscape-tablet oculto">
+                        <div class="tile-group double no-margin">
+                            <div class="tile double double-vertical bg-dark opacity calendario-eventos" >
+                                <div class="tile-content icon">
+                                    <i class="icon-calendar"></i>
+                                </div>
+                                <div class="tile-status">
+                                    <span class="name">Calendario de Eventos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span7 ocultar-landscape-tablet no-margin">
+                        <div class="tile-group quadro no-margin">
+                            <div class="tile quadro double-vertical bg-dark opacity calendario-eventos" >
+                                <div class="tile-content icon">
+                                    <i class="icon-calendar"></i>
+                                </div>
+                                <div class="tile-status">
+                                    <span class="name">Calendario de Eventos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span7 no-margin">
+                        <div class="tile-group quadro no-margin">
+                            <div class="tile double-vertical bg-transparent">
+                                <div class="tile bg-green">
+                                    <div class="tile-content icon">
+                                        <i class="icon-ticket"></i>
+                                    </div>
+                                    <div class="tile-status">
+                                        <span class="name">Pases para Eventos</span>
+                                    </div>
+                                </div>
+                                <div class="tile">
+                                    <div class="tile-content image">
+                                        <img src="img/eventos.jpg">
+                                    </div>
+                                    <div class="tile-status bg-dark opacity">
+                                        <span class="name">Eventos</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tile triple double-vertical bg-darkRed">
+                                <div class="tile-content icon">
+                                    <i class="icon-camera"></i>
+                                </div>
+                                <div class="tile-status">
+                                    <span class="name">App Editar Fotos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="libs/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="libs/jquery/jquery.mobile-1.4.4.min.js"></script>        
+        <script type="text/javascript" src="libs/metroui/metro.min.js"></script>        
+        <script type="text/javascript">
+            app.initialize();
+            function cambiarPagina(url){
+                $.mobile.changePage( url, { transition: "slide" });
+            }
+            //Listeners
+            $(".calendario-eventos").click(function(){
+                cambiarPagina('calendario.html');
+            });
+        </script>
+    </body>
+</html>
