@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Capture Photo</title>
+ 
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  </head>
+  <body onload="onLoad()">
+    <button onclick="takePicture();">Capture Photo</button> <br>
+    <img style="width:100px;height:100px;" id="camera_image" src="" />
+      <div id="camera_status"></div>
+      <script type="text/javascript" charset="utf-8">
+ 
+    function onLoad() {
+        var pictureSource;
+        var destinationType;
+        var deviceReady = false;
+        alert("JS1 Loaded!")
+        document.addEventListener("deviceready", onDeviceReady, false);     
+    }
+ 
+    function onDeviceReady() {
+        alert("Device ready!");
+        deviceReady = true;
+        pictureSource = navigator.camera.PictureSourceType;
+        destinationType = navigator.camera.DestinationType;
+        document.addEventListener("resume", onResume, false);
+    }
+ 
+    function onResume() {
+        alert("Device resumed!");
+    }
+ 
+    function takePicture() {
+        if (!deviceReady) {
+            alert("Error: PhoneGap did not initialize.");
+        }
+        navigator.camera.getPicture(
+            function(uri) {
+                var img = document.getElementById('camera_image');
+                //img.style.visibility = "visible";
+                img.style.display = "block";
+                img.src = uri;
+                console.log(uri);
+                document.getElementById('camera_status').innerHTML = "Success";
+            },
+            function(e) {
+                console.log("Error getting picture: " + e);
+                document.getElementById('camera_status').innerHTML = "Error getting picture.";
+            }, {
+                quality : 50,
+                destinationType : destinationType.DATA_URI
+            });
+    };
+ 
+    </script>
+  </body>
+</html>

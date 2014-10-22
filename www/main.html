@@ -49,7 +49,7 @@
                 </div>
             </div>
             </div-->
-            <header class="bg-dark">
+            <!--header class="bg-dark">
             <div class="navigation-bar dark">
                 <div class="navigation-bar-content container">
                     <a href="/" class="element"><span class="icon-grid-view"></span> EXPOGUAYAQUIL</a>
@@ -58,18 +58,28 @@
                     <a class="element1 pull-menu" href="#"></a>
                     <ul class="element-menu">
                         <li>
-                            <a title="Home" href="cambiarPagina('main.html')" class="element place-right"><span class="icon-home"> Home</span></a>
+                            <a title="Home" href="main.html" class="element place-right"><span class="icon-home"> Home</span></a>
                         </li>
                         <li>
-                            <a title="Perfil" href="cambiarPagina('main.html')" class="element place-right"><span class="icon-user"> Perfil</span></a>
+                            <a title="Perfil" href="main.html" class="element place-right"><span class="icon-user"> Perfil</span></a>
                         </li>
                         <li>
-                            <a title="Buscar" href="cambiarPagina('main.html')" class="element place-right"><span class="icon-search"> Buscar</span></a>
+                            <a title="Buscar" href="main.html" class="element place-right"><span class="icon-search"> Buscar</span></a>
                         </li>
                     </ul>
                 </div>
+
             </div>
-            </header>
+            </header-->
+            <nav>
+                
+                <a href="" id="menuToggle" title="show menu">
+                    <span class="navClosed"><i>show menu</i></span>
+                </a>
+                <a title="Home" href="main.html" ><span class="icon-home"> Home</span></a>
+                <a title="Perfil" href="main.html" ><span class="icon-user"> Perfil</span></a>
+                <a title="Buscar" href="main.html" ><span class="icon-search"> Buscar</span></a>
+            </nav>
             <div class="grid no-margin">
                 <div class="row centrado" id="content-row">
                     <div class="span7">
@@ -118,7 +128,7 @@
                         </div>
                     </div>
                     <div class="span4 ver-landscape-tablet oculto">
-                        <div class="tile-group double no-margin">
+                        <div class="tile-group double no-margin little-padding">
                             <div class="tile double double-vertical bg-dark opacity calendario-eventos" >
                                 <div class="tile-content icon">
                                     <i class="icon-calendar"></i>
@@ -130,7 +140,7 @@
                         </div>
                     </div>
                     <div class="span7 ocultar-landscape-tablet no-margin">
-                        <div class="tile-group quadro no-margin">
+                        <div class="tile-group quadro no-margin little-padding">
                             <div class="tile quadro double-vertical bg-dark opacity calendario-eventos" >
                                 <div class="tile-content icon">
                                     <i class="icon-calendar"></i>
@@ -142,8 +152,8 @@
                         </div>
                     </div>
                     <div class="span7 no-margin">
-                        <div class="tile-group quadro no-margin">
-                            <div class="tile double-vertical bg-transparent">
+                        <div class="tile-group quadro no-margin little-padding">
+                            <div class="vertical-group bg-transparent">
                                 <div class="tile bg-green">
                                     <div class="tile-content icon">
                                         <i class="icon-ticket"></i>
@@ -160,8 +170,9 @@
                                         <span class="name">Eventos</span>
                                     </div>
                                 </div>
+
                             </div>
-                            <div class="tile triple double-vertical bg-darkRed">
+                            <div class="tile triple double-vertical bg-darkRed" id="editar_fotos">
                                 <div class="tile-content icon">
                                     <i class="icon-camera"></i>
                                 </div>
@@ -188,6 +199,27 @@
             $(".calendario-eventos").click(function(){
                 cambiarPagina('calendario.html');
             });
+            $("#editar_fotos").click(function(){
+                cambiarPagina('camera.html');
+            });
+            //Menu lateral
+            
+                
+            $('#menuToggle').click(function(){
+                console.log('x');
+                var $parent = $(this).parent('nav');
+                $parent.toggleClass("open");
+                var navState = $parent.hasClass('open') ? "hide" : "show";
+                $(this).attr("title", navState + " navigation");
+                // Set the timeout to the animation length in the CSS.
+                /*setTimeout(function(){
+                console.log("timeout set");
+                $('#menuToggle > span').toggleClass("navClosed").toggleClass("navOpen");
+                }, 200);*/
+                //e.preventDefault();
+            });
+            
         </script>
+        
     </body>
 </html>

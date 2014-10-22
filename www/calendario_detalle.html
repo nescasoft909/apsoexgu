@@ -74,47 +74,40 @@
                 <div class="row" id="content-row">
                     <div class="span7 centrado" >
                         <div class="tile-group quadro no-margin">
-                            <div class="tile quadro double-vertical bg-dark opacity calendario-principal" >
+                            <div class="tile quadro double-vertical bg-dark opacity calendario-eventos" >
                                 <div class="tile-content image">
                                     <img src="img/evento_principal.jpg">
-                                </div>
-                                <div class="tile-status bg-dark opacity">
-                                    <span class="name">Proximo evento</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="span7 centrado">
-                        <div class="tile-group double no-margin">
-                            <div class="tile double double-vertical bg-dark opacity calendario-eventos" >
-                                <div class="tile-content icon">
-                                    <i class="icon-calendar"></i>
-                                </div>
-                                <div class="tile-status">
-                                    <span class="name">Calendario por Mes</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tile-group double no-margin">
-                            <div class="tile double double-vertical bg-dark opacity calendario-eventos" >
-                                <div class="tile-content icon">
-                                    <i class="icon-calendar"></i>
-                                </div>
-                                <div class="tile-status">
-                                    <span class="name">Calendario por tipo de evento</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="span7 centrado" >
                         <div class="tile-group quadro no-margin">
-                            <div class="tile quadro double-vertical bg-dark opacity calendario-eventos" >
-                                <div class="tile-content icon">
-                                    <i class="icon-calendar"></i>
-                                </div>
-                                <div class="tile-status">
-                                    <span class="name">Todos los Eventos</span>
-                                </div>
+                            <div class="cuadro-cuadro bg-dark opacity">
+                                <span class="text" >
+                                    <div style="margin-left:5px; text-align:left;display:inline-block;"><br><br>
+                                    www.andrescepeda.com
+                                    </div>
+                                    <div style="margin-right:5px; text-align:right;display:inline-block;float:right;"><br><br>
+                                    <b style="color:yellow;"><i class="icon-star-3"></i><i class="icon-star-3"></i><i class="icon-star-3"></i><i class="icon-star-3"></i><i class="icon-star-3"></i></b>
+                                    </div>
+                                </span>
+                                <span class="text" >
+                                    <div style="margin-left:5px;"><br><br>
+                                    <b><center>Descripcion del Evento</center></b>
+                                    <br><br><br>
+                                    <b>Cepeda Box:</b>$99 Sillas numeradas</span><br><br>
+                                    <b>VIP:</b>$65 Sillas numeradas</span><br><br>
+                                    <b>Prefeencia:</b>$40 Sillas no numeradas</span><br><br>
+                                    Los puntos de venta son Musicalísimo del Mall del Sol, Mr. Books Village y en la Isla de Ticket show de San marino.</div>
+                                </span>
+                                <span class="text" >
+                                    <div style="margin-left:5px;">
+                                        <br><br><br>
+                                        <b style="color:yellow;"><i class="icon-star-3"></i></b> Marcar como favorito<br><br>
+                                        <b><i class="icon-calendar"></i></b> Agregar a mi calendario<br><br>
+                                    </div>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -130,14 +123,6 @@
             app.initialize();
             $(".logo_login").click(function(){
                 $.mobile.changePage( "index.html", { transition: "slide" });
-            });
-            
-            //temporal
-            $(".calendario-eventos").click(function(){
-                cambiarPagina('calendario_lista.html');
-            });
-            $(".calendario-principal").click(function(){
-                cambiarPagina('calendario_detalle.html');
             });
             function cambiarPagina(url){
                 $.mobile.changePage( url, { transition: "slide" });
