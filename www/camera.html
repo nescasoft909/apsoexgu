@@ -39,7 +39,6 @@
       // The inline CSS rules are used to resize the image
       //
       smallImage.src = "data:image/jpeg;base64," + imageData;
-        alert('foto');
     }
 
     // Called when a photo is successfully retrieved
@@ -73,11 +72,9 @@
     // A button will call this function
     //
     function capturePhotoEdit() {
-        alert('capturar foto');
       // Take picture using device camera, allow edit, and retrieve image as base64-encoded string  
       navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
         destinationType: destinationType.DATA_URL });
-        alert('captura foto2');
     }
 
     // A button will call this function
@@ -184,7 +181,7 @@
         <script type="text/javascript" src="libs/jquery/jquery.mobile-1.4.4.min.js"></script>        
         <script type="text/javascript" src="libs/metroui/metro.min.js"></script>        
         <script type="text/javascript">
-            //app.initialize();
+            app.initialize();
             
             loadMenu();
         $("#take_picture").click(function(){
