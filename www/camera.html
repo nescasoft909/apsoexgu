@@ -4,95 +4,6 @@
     <title>Capture Photo</title>
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
-
-    var pictureSource;   // picture source
-    var destinationType; // sets the format of returned value 
-
-    // Wait for Cordova to connect with the device
-    //
-    
-    // Cordova is ready to be used!
-    //
-    function onDeviceReady() {
-        pictureSource=navigator.camera.PictureSourceType;
-        destinationType=navigator.camera.DestinationType;
-        alert('ready');
-    }
-
-    // Called when a photo is successfully retrieved
-    //
-    function onPhotoDataSuccess(imageData) {
-      // Uncomment to view the base64 encoded image data
-      //console.log(imageData);
-
-      // Get image handle
-      //
-      var smallImage = document.getElementById('largeImage');
-
-      // Unhide image elements
-      //
-      smallImage.style.display = 'block';
-
-      // Show the captured photo
-      // The inline CSS rules are used to resize the image
-      //
-      smallImage.src = "data:image/jpeg;base64," + imageData;
-    }
-
-    // Called when a photo is successfully retrieved
-    //
-    function onPhotoURISuccess(imageURI) {
-      // Uncomment to view the image file URI 
-      //console.log(imageURI);
-
-      // Get image handle
-      //
-      var largeImage = document.getElementById('largeImage');
-
-      // Unhide image elements
-      //
-      largeImage.style.display = 'block';
-
-      // Show the captured photo
-      // The inline CSS rules are used to resize the image
-      //
-      largeImage.src = imageURI;
-    }
-
-    // A button will call this function
-    //
-    function capturePhoto() {
-      // Take picture using device camera and retrieve image as base64-encoded string
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
-        destinationType: destinationType.DATA_URL });
-    }
-
-    // A button will call this function
-    //
-    function capturePhotoEdit() {
-      // Take picture using device camera, allow edit, and retrieve image as base64-encoded string  
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
-        destinationType: destinationType.DATA_URL });
-    }
-
-    // A button will call this function
-    //
-    function getPhoto(source) {
-      // Retrieve image file location from specified source
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, 
-        destinationType: destinationType.FILE_URI,
-        sourceType: source });
-    }
-
-    // Called if something bad happens.
-    // 
-    function onFail(message) {
-      alert('Failed because: ' + message);
-    }
-
-    </script>
- 
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
@@ -108,40 +19,6 @@
     </head>
     <body class="metro"> 
         <div id="content-page" class="ametrocontenido container">
-            <!--div class="tile-area no-desktop" style="width: 1774px;">
-                <!--h1 class="tile-area-title fg-white">ExpoGuayaquil - main</h1>
-            <!--div class="user-id">
-                <div class="user-id-image">
-                    <span class="icon-user no-display1"></span>
-                    <img src="images/Battlefield_4_Icon.png" class="no-display">
-                </div>
-                <div class="user-id-name">
-                    <span class="first-name">Sergey</span>
-                    <span class="last-name">Pimenov</span>
-                </div>
-            </div>
-            </div-->
-            <!--header class="bg-dark">
-            <div class="navigation-bar dark">
-                <div class="navigation-bar-content container">
-                    <a href="/" class="element"><span class="icon-grid-view"></span> CALENDARIO DE EVENTOS</a>
-                    <span class="element-divider"></span>
-
-                    <a class="element1 pull-menu" href="#"></a>
-                    <ul class="element-menu">
-                        <li>
-                            <a title="Home" href="main.html" class="element place-right"><span class="icon-home"> Home</span></a>
-                        </li>
-                        <li>
-                            <a title="Perfil" href="main.html" class="element place-right"><span class="icon-user"> Perfil</span></a>
-                        </li>
-                        <li>
-                            <a title="Buscar" href="main.html" class="element place-right"><span class="icon-search"> Buscar</span></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            </header-->
             <nav>
                 <a href="" id="menuToggle" title="show menu">
                     <span class="navClosed"><i>show menu</i></span>
@@ -181,7 +58,6 @@
         <script type="text/javascript" src="libs/metroui/metro.min.js"></script>        
         <script type="text/javascript">
             app.initialize();
-            //document.addEventListener("deviceready",onDeviceReady,false);
             
             loadMenu();
         $("#take_picture").click(function(){
@@ -190,12 +66,5 @@
         });
         </script>
     </body>
-  <!--body>
-    <button onclick="capturePhoto();">Capture Photo</button> <br>
-    <button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
-    <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
-    <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
-    <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
-    <img style="display:none;" id="largeImage" src="" />
-  </body-->
+
 </html>
