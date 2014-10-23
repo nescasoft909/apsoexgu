@@ -11,8 +11,7 @@
 
     // Wait for Cordova to connect with the device
     //
-    document.addEventListener("deviceready",onDeviceReady,false);
-
+    
     // Cordova is ready to be used!
     //
     function onDeviceReady() {
@@ -181,7 +180,8 @@
         <script type="text/javascript" src="libs/jquery/jquery.mobile-1.4.4.min.js"></script>        
         <script type="text/javascript" src="libs/metroui/metro.min.js"></script>        
         <script type="text/javascript">
-            app.initialize();
+            //app.initialize();
+            document.addEventListener("deviceready",onDeviceReady,false);
             
             loadMenu();
         $("#take_picture").click(function(){
