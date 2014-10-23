@@ -72,13 +72,12 @@
             </div>
             </header-->
             <nav>
-                
                 <a href="" id="menuToggle" title="show menu">
                     <span class="navClosed"><i>show menu</i></span>
                 </a>
-                <a title="Home" href="main.html" ><span class="icon-home"> Home</span></a>
-                <a title="Perfil" href="main.html" ><span class="icon-user"> Perfil</span></a>
-                <a title="Buscar" href="main.html" ><span class="icon-search"> Buscar</span></a>
+                <a title="Home" href="#" onclick="cambiarPagina('main.html');"><span class="icon-home"> Home</span></a>
+                <a title="Perfil" href="#" onclick="cambiarPagina('formulario_sign.html');" ><span class="icon-user"> Perfil</span></a>
+                <a title="Buscar" href="#" onclick="cambiarPagina('main.html');"><span class="icon-search"> Buscar</span></a>
             </nav>
             <div class="grid no-margin">
                 <div class="row centrado" id="content-row">
@@ -177,7 +176,7 @@
                                     <i class="icon-camera"></i>
                                 </div>
                                 <div class="tile-status">
-                                    <span class="name">App Editar Fotos</span>
+                                    <span class="name">App Fotos</span>
                                 </div>
                             </div>
                         </div>
@@ -192,9 +191,10 @@
         <script type="text/javascript" src="libs/metroui/metro.min.js"></script>        
         <script type="text/javascript">
             app.initialize();
-            function cambiarPagina(url){
-                $.mobile.changePage( url, { transition: "slide" });
-            }
+            /*$('.ametrocontenido').on('pageshow', function () {
+                loadMenu();
+            });*/
+            loadMenu();
             //Listeners
             $(".calendario-eventos").click(function(){
                 cambiarPagina('calendario.html');
@@ -203,22 +203,7 @@
                 cambiarPagina('camera.html');
             });
             //Menu lateral
-            
                 
-            $('#menuToggle').click(function(){
-                console.log('x');
-                var $parent = $(this).parent('nav');
-                $parent.toggleClass("open");
-                var navState = $parent.hasClass('open') ? "hide" : "show";
-                $(this).attr("title", navState + " navigation");
-                // Set the timeout to the animation length in the CSS.
-                /*setTimeout(function(){
-                console.log("timeout set");
-                $('#menuToggle > span').toggleClass("navClosed").toggleClass("navOpen");
-                }, 200);*/
-                //e.preventDefault();
-            });
-            
         </script>
         
     </body>

@@ -49,7 +49,7 @@
                 </div>
             </div>
             </div-->
-            <header class="bg-dark">
+            <!--header class="bg-dark">
             <div class="navigation-bar dark">
                 <div class="navigation-bar-content container">
                     <a href="/" class="element"><span class="icon-grid-view"></span> CALENDARIO DE EVENTOS</a>
@@ -69,7 +69,15 @@
                     </ul>
                 </div>
             </div>
-            </header>
+            </header-->
+            <nav>
+                <a href="" id="menuToggle" title="show menu">
+                    <span class="navClosed"><i>show menu</i></span>
+                </a>
+                <a title="Home" href="#" onclick="cambiarPagina('main.html');"><span class="icon-home"> Home</span></a>
+                <a title="Perfil" href="#" onclick="cambiarPagina('formulario_sign.html');" ><span class="icon-user"> Perfil</span></a>
+                <a title="Buscar" href="#" onclick="cambiarPagina('main.html');"><span class="icon-search"> Buscar</span></a>
+            </nav>
             <div class="grid no-margin">
                 <div class="row" id="content-row">
                     <div class="span7 centrado" >
@@ -120,13 +128,12 @@
         <script type="text/javascript" src="libs/jquery/jquery.mobile-1.4.4.min.js"></script>        
         <script type="text/javascript" src="libs/metroui/metro.min.js"></script>        
         <script type="text/javascript">
-            app.initialize();
+            //app.initialize();
             $(".logo_login").click(function(){
                 $.mobile.changePage( "index.html", { transition: "slide" });
             });
-            function cambiarPagina(url){
-                $.mobile.changePage( url, { transition: "slide" });
-            }
+            loadMenu();
+            
         </script>
     </body>
 </html>

@@ -49,7 +49,7 @@
                 </div>
             </div>
             </div-->
-            <header class="bg-dark">
+            <!--header class="bg-dark">
             <div class="navigation-bar dark">
                 <div class="navigation-bar-content container">
                     <a href="/" class="element"><span class="icon-grid-view"></span> CALENDARIO DE EVENTOS</a>
@@ -69,19 +69,25 @@
                     </ul>
                 </div>
             </div>
-            </header>
+            </header-->
+            <nav>
+                <a href="" id="menuToggle" title="show menu">
+                    <span class="navClosed"><i>show menu</i></span>
+                </a>
+                <a title="Home" href="#" onclick="cambiarPagina('main.html');"><span class="icon-home"> Home</span></a>
+                <a title="Perfil" href="#" onclick="cambiarPagina('formulario_sign.html');" ><span class="icon-user"> Perfil</span></a>
+                <a title="Buscar" href="#" onclick="cambiarPagina('main.html');"><span class="icon-search"> Buscar</span></a>
+            </nav>
             <div class="grid no-margin">
                 <div class="row" id="content-row">
                     <div class="span7 centrado">
-                        <div class="tile-group double no-margin">
-                            <div class="tile double double-vertical bg-dark opacity" >
+                        <div class="tile-group quadro double-vertical no-margin">
+                            <div class="tile double double-vertical bg-dark opacity no-margin" >
                                 <div class="tile-content image"><img src="img/bose.jpg"></div>
                             </div>
-                        </div>
-                        <div class="tile-group double no-margin">
                             <div class="tile double double-vertical bg-dark opacity" >
                                 <div class="tile-content icon">
-                                    
+
                                 </div>
                                 <div class="tile-status">
                                     <span class="name">
@@ -95,15 +101,13 @@
                         </div>
                     </div>
                     <div class="span7 centrado">
-                        <div class="tile-group double no-margin">
-                            <div class="tile double double-vertical bg-dark opacity" >
+                        <div class="tile-group quadro double-vertical no-margin">
+                            <div class="tile double double-vertical bg-dark opacity no-margin" >
                                 <div class="tile-content image"><img src="img/bose.jpg"></div>
                             </div>
-                        </div>
-                        <div class="tile-group double no-margin">
                             <div class="tile double double-vertical bg-dark opacity" >
                                 <div class="tile-content icon">
-                                    
+
                                 </div>
                                 <div class="tile-status">
                                     <span class="name">
@@ -117,15 +121,13 @@
                         </div>
                     </div>
                     <div class="span7 centrado">
-                        <div class="tile-group double no-margin">
-                            <div class="tile double double-vertical bg-dark opacity" >
+                        <div class="tile-group quadro double-vertical no-margin">
+                            <div class="tile double double-vertical bg-dark opacity no-margin" >
                                 <div class="tile-content image"><img src="img/bose.jpg"></div>
                             </div>
-                        </div>
-                        <div class="tile-group double no-margin">
                             <div class="tile double double-vertical bg-dark opacity" >
                                 <div class="tile-content icon">
-                                    
+
                                 </div>
                                 <div class="tile-status">
                                     <span class="name">
@@ -139,15 +141,13 @@
                         </div>
                     </div>
                     <div class="span7 centrado">
-                        <div class="tile-group double no-margin">
-                            <div class="tile double double-vertical bg-dark opacity" >
+                        <div class="tile-group quadro double-vertical no-margin">
+                            <div class="tile double double-vertical bg-dark opacity no-margin" >
                                 <div class="tile-content image"><img src="img/bose.jpg"></div>
                             </div>
-                        </div>
-                        <div class="tile-group double no-margin">
                             <div class="tile double double-vertical bg-dark opacity" >
                                 <div class="tile-content icon">
-                                    
+
                                 </div>
                                 <div class="tile-status">
                                     <span class="name">
@@ -161,15 +161,33 @@
                         </div>
                     </div>
                     <div class="span7 centrado">
-                        <div class="tile-group double no-margin">
-                            <div class="tile double double-vertical bg-dark opacity" >
+                        <div class="tile-group quadro double-vertical no-margin">
+                            <div class="tile double double-vertical bg-dark opacity no-margin" >
                                 <div class="tile-content image"><img src="img/bose.jpg"></div>
                             </div>
-                        </div>
-                        <div class="tile-group double no-margin">
                             <div class="tile double double-vertical bg-dark opacity" >
                                 <div class="tile-content icon">
-                                    
+
+                                </div>
+                                <div class="tile-status">
+                                    <span class="name">
+                                        <b>Fecha:</b>13 de Septiembre 2014<br>
+                                        <b>Horario:</b>9:00 PM<br>
+                                        <b>Separar en Calendario</b><br>
+                                        <b>Ver mas...</b><br>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span7 centrado">
+                        <div class="tile-group quadro double-vertical no-margin">
+                            <div class="tile double double-vertical bg-dark opacity no-margin" >
+                                <div class="tile-content image"><img src="img/bose.jpg"></div>
+                            </div>
+                            <div class="tile double double-vertical bg-dark opacity" >
+                                <div class="tile-content icon">
+
                                 </div>
                                 <div class="tile-status">
                                     <span class="name">
@@ -191,13 +209,12 @@
         <script type="text/javascript" src="libs/jquery/jquery.mobile-1.4.4.min.js"></script>        
         <script type="text/javascript" src="libs/metroui/metro.min.js"></script>        
         <script type="text/javascript">
-            app.initialize();
+            //app.initialize();
             $(".tile").click(function(){
                 cambiarPagina( "calendario_detalle.html", { transition: "slide" });
             });
-            function cambiarPagina(url){
-                $.mobile.changePage( url, { transition: "slide" });
-            }
+            loadMenu();
+                        
         </script>
     </body>
 </html>

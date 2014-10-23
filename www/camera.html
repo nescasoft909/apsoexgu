@@ -2,57 +2,198 @@
 <html>
   <head>
     <title>Capture Photo</title>
- 
+
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-  </head>
-  <body onload="onLoad()">
-    <button onclick="takePicture();">Capture Photo</button> <br>
-    <img style="width:100px;height:100px;" id="camera_image" src="" />
-      <div id="camera_status"></div>
-      <script type="text/javascript" charset="utf-8">
- 
-    function onLoad() {
-        var pictureSource;
-        var destinationType;
-        var deviceReady = false;
-        alert("JS1 Loaded!")
-        document.addEventListener("deviceready", onDeviceReady, false);     
-    }
- 
+    <script type="text/javascript" charset="utf-8">
+
+    var pictureSource;   // picture source
+    var destinationType; // sets the format of returned value 
+
+    // Wait for Cordova to connect with the device
+    //
+    document.addEventListener("deviceready",onDeviceReady,false);
+
+    // Cordova is ready to be used!
+    //
     function onDeviceReady() {
-        alert("Device ready!");
-        deviceReady = true;
-        pictureSource = navigator.camera.PictureSourceType;
-        destinationType = navigator.camera.DestinationType;
-        document.addEventListener("resume", onResume, false);
+        pictureSource=navigator.camera.PictureSourceType;
+        destinationType=navigator.camera.DestinationType;
     }
- 
-    function onResume() {
-        alert("Device resumed!");
+
+    // Called when a photo is successfully retrieved
+    //
+    function onPhotoDataSuccess(imageData) {
+      // Uncomment to view the base64 encoded image data
+      //console.log(imageData);
+
+      // Get image handle
+      //
+      var smallImage = document.getElementById('largeImage');
+
+      // Unhide image elements
+      //
+      smallImage.style.display = 'block';
+
+      // Show the captured photo
+      // The inline CSS rules are used to resize the image
+      //
+      smallImage.src = "data:image/jpeg;base64," + imageData;
     }
- 
-    function takePicture() {
-        if (!deviceReady) {
-            alert("Error: PhoneGap did not initialize.");
-        }
-        navigator.camera.getPicture(
-            function(uri) {
-                var img = document.getElementById('camera_image');
-                //img.style.visibility = "visible";
-                img.style.display = "block";
-                img.src = uri;
-                console.log(uri);
-                document.getElementById('camera_status').innerHTML = "Success";
-            },
-            function(e) {
-                console.log("Error getting picture: " + e);
-                document.getElementById('camera_status').innerHTML = "Error getting picture.";
-            }, {
-                quality : 50,
-                destinationType : destinationType.DATA_URI
-            });
-    };
- 
+
+    // Called when a photo is successfully retrieved
+    //
+    function onPhotoURISuccess(imageURI) {
+      // Uncomment to view the image file URI 
+      //console.log(imageURI);
+
+      // Get image handle
+      //
+      var largeImage = document.getElementById('largeImage');
+
+      // Unhide image elements
+      //
+      largeImage.style.display = 'block';
+
+      // Show the captured photo
+      // The inline CSS rules are used to resize the image
+      //
+      largeImage.src = imageURI;
+    }
+
+    // A button will call this function
+    //
+    function capturePhoto() {
+      // Take picture using device camera and retrieve image as base64-encoded string
+      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+        destinationType: destinationType.DATA_URL });
+    }
+
+    // A button will call this function
+    //
+    function capturePhotoEdit() {
+      // Take picture using device camera, allow edit, and retrieve image as base64-encoded string  
+      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
+        destinationType: destinationType.DATA_URL });
+    }
+
+    // A button will call this function
+    //
+    function getPhoto(source) {
+      // Retrieve image file location from specified source
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, 
+        destinationType: destinationType.FILE_URI,
+        sourceType: source });
+    }
+
+    // Called if something bad happens.
+    // 
+    function onFail(message) {
+      alert('Failed because: ' + message);
+    }
+
     </script>
-  </body>
+ 
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <!--meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /-->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=high-dpi"/>
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="libs/jquery/jquery.mobile-1.4.4.min.css" />
+        <link rel="stylesheet" type="text/css" href="libs/metroui/metro-bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="libs/metroui/metro-bootstrap-responsive.min.css" />
+        <link rel="stylesheet" type="text/css" href="libs/metroui/iconFont.min.css" />
+        <title>ExpoGuayaquil</title>
+    </head>
+    <body class="metro"> 
+        <div id="content-page" class="ametrocontenido container">
+            <!--div class="tile-area no-desktop" style="width: 1774px;">
+                <!--h1 class="tile-area-title fg-white">ExpoGuayaquil - main</h1>
+            <!--div class="user-id">
+                <div class="user-id-image">
+                    <span class="icon-user no-display1"></span>
+                    <img src="images/Battlefield_4_Icon.png" class="no-display">
+                </div>
+                <div class="user-id-name">
+                    <span class="first-name">Sergey</span>
+                    <span class="last-name">Pimenov</span>
+                </div>
+            </div>
+            </div-->
+            <!--header class="bg-dark">
+            <div class="navigation-bar dark">
+                <div class="navigation-bar-content container">
+                    <a href="/" class="element"><span class="icon-grid-view"></span> CALENDARIO DE EVENTOS</a>
+                    <span class="element-divider"></span>
+
+                    <a class="element1 pull-menu" href="#"></a>
+                    <ul class="element-menu">
+                        <li>
+                            <a title="Home" href="main.html" class="element place-right"><span class="icon-home"> Home</span></a>
+                        </li>
+                        <li>
+                            <a title="Perfil" href="main.html" class="element place-right"><span class="icon-user"> Perfil</span></a>
+                        </li>
+                        <li>
+                            <a title="Buscar" href="main.html" class="element place-right"><span class="icon-search"> Buscar</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </header-->
+            <nav>
+                <a href="" id="menuToggle" title="show menu">
+                    <span class="navClosed"><i>show menu</i></span>
+                </a>
+                <a title="Home" href="#" onclick="cambiarPagina('main.html');"><span class="icon-home"> Home</span></a>
+                <a title="Perfil" href="#" onclick="cambiarPagina('formulario_sign.html');" ><span class="icon-user"> Perfil</span></a>
+                <a title="Buscar" href="#" onclick="cambiarPagina('main.html');"><span class="icon-search"> Buscar</span></a>
+            </nav>
+            <div class="grid no-margin">
+                <div class="row" id="content-row">
+                    <div class="span7 centrado" >
+                        <div class="tile-group quadro no-margin">
+                            <div class="tile quadro bg-dark opacity calendario-eventos" id="take_picture">
+                                <div class="tile-content icon">
+                                    <i class="icon-camera"></i>
+                                </div>
+                                <div class="tile-status">
+                                    <span class="name">Tomar Foto</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span7 centrado">
+                        <div class="tile-group quadro no-margin">
+                            <div class="cuadro-cuadro bg-dark opacity">
+                                <img style="display:none;" id="largeImage" src="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--script type="text/javascript" src="cordova.js"></script-->
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="libs/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="libs/jquery/jquery.mobile-1.4.4.min.js"></script>        
+        <script type="text/javascript" src="libs/metroui/metro.min.js"></script>        
+        <script type="text/javascript">
+            //app.initialize();
+            
+            loadMenu();
+        $("#take_picture").click(function(){
+            capturePhotoEdit();
+        });
+        </script>
+    </body>
+  <!--body>
+    <button onclick="capturePhoto();">Capture Photo</button> <br>
+    <button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
+    <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
+    <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
+    <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+    <img style="display:none;" id="largeImage" src="" />
+  </body-->
 </html>
