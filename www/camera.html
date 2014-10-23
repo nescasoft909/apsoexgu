@@ -180,12 +180,13 @@
         <script type="text/javascript" src="libs/jquery/jquery.mobile-1.4.4.min.js"></script>        
         <script type="text/javascript" src="libs/metroui/metro.min.js"></script>        
         <script type="text/javascript">
-            //app.initialize();
-            document.addEventListener("deviceready",onDeviceReady,false);
+            app.initialize();
+            //document.addEventListener("deviceready",onDeviceReady,false);
             
             loadMenu();
         $("#take_picture").click(function(){
-            capturePhotoEdit();
+            //capturePhotoEdit();
+            app.capturePhotoEdit();
         });
         </script>
     </body>

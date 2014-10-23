@@ -45,6 +45,35 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+    capturePhotoEdit: function() {
+        var pictureSource=navigator.camera.PictureSourceType;
+        var destinationType=navigator.camera.DestinationType;
+      // Take picture using device camera, allow edit, and retrieve image as base64-encoded string  
+      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
+        destinationType: destinationType.DATA_URL });
+    },
+    
+     onFail: function(message) {
+      alert('Failed because: ' + message);
+    },
+    
+ onPhotoDataSuccess: function(imageData) {
+      // Uncomment to view the base64 encoded image data
+      //console.log(imageData);
+
+      // Get image handle
+      //
+      var smallImage = document.getElementById('largeImage');
+
+      // Unhide image elements
+      //
+      smallImage.style.display = 'block';
+
+      // Show the captured photo
+      // The inline CSS rules are used to resize the image
+      //
+      smallImage.src = "data:image/jpeg;base64," + imageData;
     }
 };
 
