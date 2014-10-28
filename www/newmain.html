@@ -1,423 +1,649 @@
 <!DOCTYPE html>
-<!--
-    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
-
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <!--meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /-->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=high-dpi"/>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1,width=device-width, height=device-height"/>
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" type="text/css" href="libs/jquery/jquery.mobile-1.4.4.min.css" />
-        <link rel="stylesheet" type="text/css" href="libs/metroui/metro-bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="libs/metroui/metro-bootstrap-responsive.min.css" />
+        <link rel="stylesheet" type="text/css" href="libs/metroui/metro-bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="libs/metroui/metro-bootstrap-responsive.css" />
         <link rel="stylesheet" type="text/css" href="libs/metroui/iconFont.min.css" />
         <title>ExpoGuayaquil</title>
     </head>
     <body class="metro"> 
+        <nav>
+            <a href="" id="menuToggle" title="show menu">
+                <span class="navClosed"><i>show menu</i></span>
+            </a>
+            <a title="Home" href="#content-page" ><span class="icon-home"> Home</span></a>
+            <a title="Perfil" href="#registro" ><span class="icon-user"> Perfil</span></a>
+            <a title="Buscar" href="#buscar" ><span class="icon-search"> Buscar</span></a>
+            <a title="Regresar" href="#" onclick="javascript:history.back()" ><span class=" icon-history"> Regresar</span></a>
+        </nav>
+        <!-- MAIN -->
         <div id="content-page" class="ametrocontenido container" data-role="page">
-
-            <nav>
-                <a href="" id="menuToggle" title="show menu">
-                    <span class="navClosed"><i>show menu</i></span>
-                </a>
-                <a title="Home" href="main.html" ><span class="icon-home"> Home</span></a>
-                <a title="Perfil" href="main.html" ><span class="icon-user"> Perfil</span></a>
-                <a title="Buscar" href="main.html" ><span class="icon-search"> Buscar</span></a>
-            </nav>
-            <div class="grid no-margin">
-                <div class="row centrado" id="content-row">
-                    <div class="span7">
-                        <div class="tile-group double no-margin">
-                            <div class="tile double double-vertical live" data-role="live-tile">
-                                <div class="tile-content image"><img src="img/bose.jpg"></div>
-                                <div class="tile-content image"><img src="img/guayaquil.jpg"></div>
-                                <div class="tile-status bg-dark opacity">
-                                    <span class="name">Ahora en Instagram</span>
+            <div class="titulo">
+            </div>
+            <div class="simplerow">
+                <div class="tile-group full no-margin">
+                    <div class="tile full live" data-role="live-tile">
+                        <div class="tile-content image full"><img src="img/bose.jpg"></div>
+                        <div class="tile-content image full"><img src="img/guayaquil.jpg"></div>
+                        <div class="tile-status bg-dark opacity">
+                            <span class="name">Ahora en Instagram</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="simplerow">
+                <div class="internalrow">
+                    <div class="cuadro_simple">
+                        <div class="tile-group full no-margin">
+                            <div class="tile full bg-darkCyan" id="tileinstagram">
+                                <div class="tile-content icon icono">
+                                    <i class="icon-instagram"></i>
                                 </div>
                             </div>
                         </div>
-                        <div class="tile-group double no-margin">
-                            <div class="tile bg-darkCyan">
-                                <div class="tile-content icon">
-                                    <i class="icon-instagram"></i>
-                                </div>
-                                <div class="tile-status">
-                                    <span class="name">Instagram</span>
+                    </div>
+                    <div class="cuadro_simple">
+                        <div class="tile-group full no-margin">
+                            <div class="tile full bg-lightBlue" id="tiletwitter">
+                                <div class="tile-content icon icono">
+                                    <i class="icon-twitter"></i>
                                 </div>
                             </div>
-                            <div class="tile bg-lightBlue">
+                        </div>
+                    </div>
+                </div>
+                <div class="internalrow">
+                    <div class="cuadro_simple">
+                        <div class="tile-group full no-margin">
+                        <div class="tile full bg-red" id="tileyoutube">
+                            <div class="tile-content icon icono">
+                                <i class="icon-youtube"></i>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="cuadro_simple">
+                        <div class="tile-group full no-margin">
+                        <div class="tile full bg-darkBlue" id="tilefacebook">
+                            <div class="tile-content icon icono">
+                                <i class="icon-facebook"></i>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="doble">
+                <div class="tile-group full no-margin little-padding">
+                    <div class="tile full bg-dark opacity" id="calendario-eventos" >
+                        <div class="tile-content icon icono">
+                            <i class="icon-calendar"></i>
+                        </div>
+                        <div class="tile-status centro">
+                            <span class="name">Calendario de Eventos</span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="onethird">
+                <div class="tile-group full no-margin">
+                    <div class="tile simpleheight bg-green no-margin" id="pase_eventos">
+                        <div class="tile-content icon icono">
+                            <i class="icon-ticket"></i>
+                        </div>
+                        <div class="tile-status centro">
+                            <span class="name">Pases Eventos</span>
+                        </div>
+                    </div>
+                    <div class="tile simpleheight no-margin">
+                        <div class="tile-content image">
+                            <img src="img/eventos.jpg">
+                        </div>
+                        <div class="tile-status bg-dark opacity">
+                            <span class="name">Eventos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="twothird">
+                <div class="tile full bg-darkRed" id="editar_fotos">
+                    <div class="tile-content icon icono">
+                        <i class="icon-camera"></i>
+                    </div>
+                    <div class="tile-status centro">
+                        <span class="name">App Editar Fotos</span>
+                    </div>
+                </div>
+            </div>
+            <div class="botones">
+            </div>
+        </div>
+        <!-- CALENDARIO-->
+        <div id="calendario" class="ametrocontenido container" data-role="page">
+            <div class="titulo"><h1>Calendario</h1>
+            </div>
+            <div class="doble">
+                <div class="tile-group full no-margin">
+                    <div class="tile full bg-dark opacity calendario-principal" id="evento_principal">
+                        <div class="tile-content image">
+                            <img src="img/evento_principal.jpg">
+                        </div>
+                        <div class="tile-status bg-dark opacity">
+                            <span class="name">Próximo evento</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="simplerow">
+                <div class="tile-group full no-margin">
+                    <div class="tile full double-vertical bg-dark opacity calendario-eventos" id="calendario_mes">
+                        <div class="tile-content icon icono">
+                            <i class="icon-calendar"></i>
+                        </div>
+                        <div class="tile-status centro">
+                            <span class="name">Calendario por Mes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="simplerow">
+                <div class="tile-group full no-margin">
+                    <div class="tile full bg-dark opacity calendario-eventos" id="calendario_tipo">
+                        <div class="tile-content icon icono">
+                            <i class="icon-calendar"></i>
+                        </div>
+                        <div class="tile-status centro">
+                            <span class="name">Calendario por tipo de evento</span>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="doble">
+                <div class="tile-group full no-margin little-padding">
+                    <div class="tile full bg-dark opacity calendario-eventos" id="calendario_todos">
+                        <div class="tile-content icon icono">
+                            <i class="icon-calendar"></i>
+                        </div>
+                        <div class="tile-status centro">
+                            <span class="name">Ver Todos Los Eventos</span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="botones">
+                
+            </div>
+        </div>
+        <!-- LISTA EVENTOS-->
+        <div id="lista_eventos" class="ametrocontenido container" data-role="page">
+            <div class="titulo"><h1 id="titulo_lista_eventos">Lista de Eventos</h1>
+            </div>
+            <div id="lista_eventos">
+                <div class="evento">
+                    <div class="simplerow" style="padding-right:0px;">
+                        <div class="tile full bg-dark opacity no-margin" >
+                            <div class="tile-content image"><img src="img/bose.jpg"></div>
+                        </div>
+                    </div>
+                    <div class="simplerow" style="padding-left:0px;">
+                        <div class="tile full bg-dark opacity" >
+                            <div class="tile-content icon">
+                            </div>
+                            <div class="tile-status">
+                                <span class="name">
+                                    <b>Fecha:</b>13 de Septiembre 2014<br>
+                                    <b>Horario:</b>9:00 PM<br>
+                                    <b>Ver mas...</b><br>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="evento">
+                    <div class="simplerow" style="padding-right:0px;">
+                        <div class="tile full bg-dark opacity no-margin" >
+                            <div class="tile-content image"><img src="img/guayaquil.jpg"></div>
+                        </div>
+                    </div>
+                    <div class="simplerow" style="padding-left:0px;">
+                        <div class="tile full bg-dark opacity" >
+                            <div class="tile-content icon">
+                            </div>
+                            <div class="tile-status">
+                                <span class="name">
+                                    <b>Fecha:</b>13 de Septiembre 2014<br>
+                                    <b>Horario:</b>9:00 PM<br>
+                                    <b>Ver mas...</b><br>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="evento">
+                    <div class="simplerow" style="padding-right:0px;">
+                        <div class="tile full bg-dark opacity no-margin" >
+                            <div class="tile-content image"><img src="img/bose.jpg"></div>
+                        </div>
+                    </div>
+                    <div class="simplerow" style="padding-left:0px;">
+                        <div class="tile full bg-dark opacity" >
+                            <div class="tile-content icon">
+                            </div>
+                            <div class="tile-status">
+                                <span class="name">
+                                    <b>Fecha:</b>13 de Septiembre 2014<br>
+                                    <b>Horario:</b>9:00 PM<br>
+                                    <b>Ver mas...</b><br>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="evento">
+                    <div class="simplerow" style="padding-right:0px;">
+                        <div class="tile full bg-dark opacity no-margin" >
+                            <div class="tile-content image"><img src="img/guayaquil.jpg"></div>
+                        </div>
+                    </div>
+                    <div class="simplerow" style="padding-left:0px;">
+                        <div class="tile full bg-dark opacity" >
+                            <div class="tile-content icon">
+                            </div>
+                            <div class="tile-status">
+                                <span class="name">
+                                    <b>Fecha:</b>13 de Septiembre 2014<br>
+                                    <b>Horario:</b>9:00 PM<br>
+                                    <b>Ver mas...</b><br>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="evento">
+                    <div class="simplerow" style="padding-right:0px;">
+                        <div class="tile full bg-dark opacity no-margin" >
+                            <div class="tile-content image"><img src="img/bose.jpg"></div>
+                        </div>
+                    </div>
+                    <div class="simplerow" style="padding-left:0px;">
+                        <div class="tile full bg-dark opacity" >
+                            <div class="tile-content icon">
+                            </div>
+                            <div class="tile-status">
+                                <span class="name">
+                                    <b>Fecha:</b>13 de Septiembre 2014<br>
+                                    <b>Horario:</b>9:00 PM<br>
+                                    <b>Ver mas...</b><br>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="botones">
+            </div>
+        </div>
+        <!-- DETALLE DE EVENTO -->
+        <div id="detalle_evento" class="ametrocontenido container" data-role="page">
+            <div class="titulo"><h1 id="titulo_lista_eventos">Detalle Evento</h1>
+            </div>
+            <div class="evento">
+                <div class="simplerow" style="padding-right:0px;">
+                    <div class="tile full bg-dark opacity no-margin" >
+                        <div class="tile-content image"><img src="img/bose.jpg"></div>
+                    </div>
+                </div>
+                <div class="simplerow" style="padding-left:0px;padding-right:6px;">
+                    <div class="tile full bg-dark opacity" >
+                        <div class="tile-content icon">
+                        </div>
+                        <div class="tile-status">
+                            <span class="name">
+                                <b>Fecha:</b>13 de Septiembre 2014<br>
+                                <b>Horario:</b>9:00 PM<br>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="doble-square" id="informacion_evento">
+                <div class="tile-group full no-margin">
+                    <div class="full bg-dark opacity calendario-principal" style="padding:5px 5px 5px 0px;">
+                        <span class="text" >
+                            <div style="margin-left:5px; text-align:left;display:inline-block;">
+                            www.andrescepeda.com
+                            </div>
+                            <div style="margin-right:5px; text-align:right;display:inline-block;float:right;">
+                                <div class="rating fg-yellow">
+                                    <ul>
+                                        <li class="rated"></li>
+                                        <li class="rated"></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                    <span class="score-hint"></span>
+                                </div>
+                            </div>
+                        </span>
+                        
+                        <div style="margin-left:5px;"><br><br>
+                        <b><center>Descripcion del Evento</center></b>
+                        <br>
+                        <b>Cepeda Box:</b>$99 Sillas numeradas</span><br>
+                        <b>VIP:</b>$65 Sillas numeradas</span><br>
+                        <b>Preferencia:</b>$40 Sillas no numeradas</span><br>
+                        Los puntos de venta son Musicalísimo del Mall del Sol, Mr. Books Village y en la Isla de Ticket show de San marino.</div>
+                        <br>
+                        <div style="margin-left:5px;">
+                            <div style="margin-left:5px; text-align:left;display:inline-block;">
+                                <b style="color:yellow;"><i class="icon-star-3"></i></b> Marcar como favorito<br>
+                            </div>
+                            <div style="margin-left:5px; text-align:right;display:inline-block; float:right;">
+                                <b><i class="icon-calendar"></i></b> Agregar a mi calendario<br><br>
+                            </div>
+
+                        </div><br><br>
+                        <div style="margin-left:5px;">
+                            <div class="tile full bg-lightBlue" id="sharetwitter">
                                 <div class="tile-content icon">
                                     <i class="icon-twitter"></i>
                                 </div>
-                                <div class="tile-status">
-                                    <span class="name">Twitter</span>
-                                </div>
                             </div>
-                            <div class="tile bg-darkBlue">
+                            <div class="tile full bg-blue" id="sharefacebook">
                                 <div class="tile-content icon">
                                     <i class="icon-facebook"></i>
                                 </div>
-                                <div class="tile-status">
-                                    <span class="name">Facebook</span>
-                                </div>
-                            </div>
-                            <div class="tile bg-red">
-                                <div class="tile-content icon">
-                                    <i class="icon-youtube"></i>
-                                </div>
-                                <div class="tile-status">
-                                    <span class="name">YouTube</span>
-                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="span4 ver-landscape-tablet oculto">
-                        <div class="tile-group double no-margin little-padding">
-                            <div class="tile double double-vertical bg-dark opacity calendario-eventos" >
-                                <div class="tile-content icon">
-                                    <i class="icon-calendar"></i>
-                                </div>
-                                <div class="tile-status">
-                                    <span class="name">Calendario de Eventos</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="span7 ocultar-landscape-tablet no-margin">
-                        <div class="tile-group quadro no-margin little-padding">
-                            <div class="tile quadro double-vertical bg-dark opacity calendario-eventos" >
-                                <div class="tile-content icon">
-                                    <i class="icon-calendar"></i>
-                                </div>
-                                <div class="tile-status">
-                                    <span class="name">Calendario de Eventos</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="span7 no-margin">
-                        <div class="tile-group quadro no-margin little-padding">
-                            <div class="vertical-group bg-transparent">
-                                <div class="tile bg-green">
-                                    <div class="tile-content icon">
-                                        <i class="icon-ticket"></i>
-                                    </div>
-                                    <div class="tile-status">
-                                        <span class="name">Pases para Eventos</span>
-                                    </div>
-                                </div>
-                                <div class="tile">
-                                    <div class="tile-content image">
-                                        <img src="img/eventos.jpg">
-                                    </div>
-                                    <div class="tile-status bg-dark opacity">
-                                        <span class="name">Eventos</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="tile triple double-vertical bg-darkRed" id="editar_fotos">
-                                <div class="tile-content icon">
-                                    <i class="icon-camera"></i>
-                                </div>
-                                <div class="tile-status">
-                                    <span class="name">App Editar Fotos</span>
-                                </div>
+                        <div style="margin-left:5px;">
+                            <div class="input-control textarea">
+                                <textarea></textarea>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="botones">
+            </div>
         </div>
-        <div id="calendario" class="ametrocontenido container" data-role="page">
-            <nav>
-                <a href="" id="menuToggle" title="show menu">
-                    <span class="navClosed"><i>show menu</i></span>
-                </a>
-                <a title="Home" href="main.html" ><span class="icon-home"> Home</span></a>
-                <a title="Perfil" href="main.html" ><span class="icon-user"> Perfil</span></a>
-                <a title="Buscar" href="main.html" ><span class="icon-search"> Buscar</span></a>
-            </nav>
-            <div class="grid no-margin">
-                <div class="row" id="content-row">
-                    <div class="span7 centrado" >
-                        <div class="tile-group quadro no-margin">
-                            <div class="tile quadro double-vertical bg-dark opacity calendario-principal" >
-                                <div class="tile-content image">
-                                    <img src="img/evento_principal.jpg">
-                                </div>
-                                <div class="tile-status bg-dark opacity">
-                                    <span class="name">Proximo evento</span>
-                                </div>
-                            </div>
+        <!-- CAMARA-->
+        <div id="camara" class="ametrocontenido container" data-role="page">
+            <div class="titulo"><h1 id="titulo_lista_eventos"></h1>
+            </div>
+            <div class="doble-middle">
+                <div class="tile-group full no-margin" style="padding-right:6px!important;">
+                    <div class="tile full bg-dark opacity calendario-eventos" id="take_picture">
+                        <div class="tile-content icon icono">
+                            <i class="icon-camera"></i>
                         </div>
-                    </div>
-                    <div class="span7 centrado">
-                        <div class="tile-group double no-margin">
-                            <div class="tile double double-vertical bg-dark opacity calendario-eventos" >
-                                <div class="tile-content icon">
-                                    <i class="icon-calendar"></i>
-                                </div>
-                                <div class="tile-status">
-                                    <span class="name">Calendario por Mes</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tile-group double no-margin">
-                            <div class="tile double double-vertical bg-dark opacity calendario-eventos" >
-                                <div class="tile-content icon">
-                                    <i class="icon-calendar"></i>
-                                </div>
-                                <div class="tile-status">
-                                    <span class="name">Calendario por tipo de evento</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="span7 centrado" >
-                        <div class="tile-group quadro no-margin">
-                            <div class="tile quadro double-vertical bg-dark opacity calendario-eventos" >
-                                <div class="tile-content icon">
-                                    <i class="icon-calendar"></i>
-                                </div>
-                                <div class="tile-status">
-                                    <span class="name">Todos los Eventos</span>
-                                </div>
-                            </div>
+                        <div class="tile-status centro">
+                            <span class="name">Tomar Foto</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="calendario-lista" class="ametrocontenido container" data-role="page">
-            <nav>
-                <a href="" id="menuToggle" title="show menu">
-                    <span class="navClosed"><i>show menu</i></span>
-                </a>
-                <a title="Home" href="main.html" ><span class="icon-home"> Home</span></a>
-                <a title="Perfil" href="main.html" ><span class="icon-user"> Perfil</span></a>
-                <a title="Buscar" href="main.html" ><span class="icon-search"> Buscar</span></a>
-            </nav>
-            <div class="grid no-margin">
-                <div class="row" id="content-row">
-                    <div class="span7 centrado">
-                        <div class="tile-group double no-margin">
-                            <div class="tile double double-vertical bg-dark opacity" >
-                                <div class="tile-content image"><img src="img/bose.jpg"></div>
-                            </div>
-                        </div>
-                        <div class="tile-group double no-margin">
-                            <div class="tile double double-vertical bg-dark opacity" >
+            <div class="doble-square" id="foto">
+                <div class="tile-group full no-margin">
+                    <div class="full bg-dark opacity" style="padding:5px 5px 5px 5px;">
+                        <img style="display:none;" id="largeImage" src="" />
+                        <div style="margin-left:5px;display:none;" id="sharePicture">
+                            <div class="tile full bg-lightBlue" id="sharetwitter">
                                 <div class="tile-content icon">
-                                    
-                                </div>
-                                <div class="tile-status">
-                                    <span class="name">
-                                        <b>Fecha:</b>13 de Septiembre 2014<br>
-                                        <b>Horario:</b>9:00 PM<br>
-                                        <b>Separar en Calendario</b><br>
-                                        <b>Ver mas...</b><br>
-                                    </span>
+                                    <i class="icon-twitter"></i>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="span7 centrado">
-                        <div class="tile-group double no-margin">
-                            <div class="tile double double-vertical bg-dark opacity" >
-                                <div class="tile-content image"><img src="img/bose.jpg"></div>
-                            </div>
-                        </div>
-                        <div class="tile-group double no-margin">
-                            <div class="tile double double-vertical bg-dark opacity" >
+                            <div class="tile full bg-blue" id="sharefacebook">
                                 <div class="tile-content icon">
-                                    
-                                </div>
-                                <div class="tile-status">
-                                    <span class="name">
-                                        <b>Fecha:</b>13 de Septiembre 2014<br>
-                                        <b>Horario:</b>9:00 PM<br>
-                                        <b>Separar en Calendario</b><br>
-                                        <b>Ver mas...</b><br>
-                                    </span>
+                                    <i class="icon-facebook"></i>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="span7 centrado">
-                        <div class="tile-group double no-margin">
-                            <div class="tile double double-vertical bg-dark opacity" >
-                                <div class="tile-content image"><img src="img/bose.jpg"></div>
-                            </div>
-                        </div>
-                        <div class="tile-group double no-margin">
-                            <div class="tile double double-vertical bg-dark opacity" >
-                                <div class="tile-content icon">
-                                    
-                                </div>
-                                <div class="tile-status">
-                                    <span class="name">
-                                        <b>Fecha:</b>13 de Septiembre 2014<br>
-                                        <b>Horario:</b>9:00 PM<br>
-                                        <b>Separar en Calendario</b><br>
-                                        <b>Ver mas...</b><br>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="span7 centrado">
-                        <div class="tile-group double no-margin">
-                            <div class="tile double double-vertical bg-dark opacity" >
-                                <div class="tile-content image"><img src="img/bose.jpg"></div>
-                            </div>
-                        </div>
-                        <div class="tile-group double no-margin">
-                            <div class="tile double double-vertical bg-dark opacity" >
-                                <div class="tile-content icon">
-                                    
-                                </div>
-                                <div class="tile-status">
-                                    <span class="name">
-                                        <b>Fecha:</b>13 de Septiembre 2014<br>
-                                        <b>Horario:</b>9:00 PM<br>
-                                        <b>Separar en Calendario</b><br>
-                                        <b>Ver mas...</b><br>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="span7 centrado">
-                        <div class="tile-group double no-margin">
-                            <div class="tile double double-vertical bg-dark opacity" >
-                                <div class="tile-content image"><img src="img/bose.jpg"></div>
-                            </div>
-                        </div>
-                        <div class="tile-group double no-margin">
-                            <div class="tile double double-vertical bg-dark opacity" >
-                                <div class="tile-content icon">
-                                    
-                                </div>
-                                <div class="tile-status">
-                                    <span class="name">
-                                        <b>Fecha:</b>13 de Septiembre 2014<br>
-                                        <b>Horario:</b>9:00 PM<br>
-                                        <b>Separar en Calendario</b><br>
-                                        <b>Ver mas...</b><br>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div>        
                 </div>
             </div>
-        </div>
-        <div id="calendario-detalle" class="ametrocontenido container" data-role="page">
-            
-            <nav>
-                <a href="" id="menuToggle" title="show menu">
-                    <span class="navClosed"><i>show menu</i></span>
-                </a>
-                <a title="Home" href="main.html" ><span class="icon-home"> Home</span></a>
-                <a title="Perfil" href="main.html" ><span class="icon-user"> Perfil</span></a>
-                <a title="Buscar" href="main.html" ><span class="icon-search"> Buscar</span></a>
-            </nav>
-            <div class="grid no-margin">
-                <div class="row" id="content-row">
-                    <div class="span7 centrado" >
-                        <div class="tile-group quadro no-margin">
-                            <div class="tile quadro double-vertical bg-dark opacity calendario-eventos" >
-                                <div class="tile-content image">
-                                    <img src="img/evento_principal.jpg">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="span7 centrado">
-                        <div class="tile-group quadro no-margin">
-                            <div class="cuadro-cuadro bg-dark opacity">
-                                <span class="text" >
-                                    <div style="margin-left:5px; text-align:left;display:inline-block;"><br><br>
-                                    www.andrescepeda.com
-                                    </div>
-                                    <div style="margin-right:5px; text-align:right;display:inline-block;float:right;"><br><br>
-                                    <b style="color:yellow;"><i class="icon-star-3"></i><i class="icon-star-3"></i><i class="icon-star-3"></i><i class="icon-star-3"></i><i class="icon-star-3"></i></b>
-                                    </div>
-                                </span>
-                                <span class="text" >
-                                    <div style="margin-left:5px;"><br><br>
-                                    <b><center>Descripcion del Evento</center></b>
-                                    <br><br><br>
-                                    <b>Cepeda Box:</b>$99 Sillas numeradas</span><br><br>
-                                    <b>VIP:</b>$65 Sillas numeradas</span><br><br>
-                                    <b>Prefeencia:</b>$40 Sillas no numeradas</span><br><br>
-                                    Los puntos de venta son Musicalísimo del Mall del Sol, Mr. Books Village y en la Isla de Ticket show de San marino.</div>
-                                </span>
-                                <span class="text" >
-                                    <div style="margin-left:5px;">
-                                        <br><br><br>
-                                        <b style="color:yellow;"><i class="icon-star-3"></i></b> Marcar como favorito<br><br>
-                                        <b><i class="icon-calendar"></i></b> Agregar a mi calendario<br><br>
-                                    </div>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="botones">
             </div>
         </div>
+        <!-- REGISTRO -->
+        <div id="registro" class="ametrocontenido container" data-role="page">
+            <div class="titulo"><h1 id="titulo_lista_eventos">Registro</h1>
+            </div>
+            <div class="doble-square" id="foto">
+                <div class="tile-group full no-margin">
+                    <div class="full bg-dark opacity calendario-principal" style="padding:5px 5px 5px 5px;">
+                        <label>Nombre</label>
+                        <div class="input-control text bg-dark" data-role="input-control">
+                            <input type="text" placeholder="" autofocus="">
+                            <button class="btn-clear" tabindex="-1" type="button"></button>
+                        </div>
+                        <label>Apellido</label>
+                        <div class="input-control text bg-dark" data-role="input-control">
+                            <input type="text" placeholder="">
+                            <button class="btn-clear" tabindex="-1" type="button"></button>
+                        </div>
+                        <label>Ciudad</label>
+                        <div class="input-control text bg-dark" data-role="input-control">
+                            <input type="text" placeholder="">
+                            <button class="btn-clear" tabindex="-1" type="button"></button>
+                        </div>
+                        <label>Email</label>
+                        <div class="input-control text bg-dark" data-role="input-control">
+                            <input type="email" placeholder="">
+                            <button class="btn-clear" tabindex="-1" type="button"></button>
+                        </div>
+                        <label>Actividad</label>
+                        <div class="input-control text bg-dark" data-role="input-control">
+                            <input type="text" placeholder="">
+                            <button class="btn-clear" tabindex="-1" type="button"></button>
+                        </div>
+                        <label>Fecha Nacimiento</label>
+                        <div class="input-control text bg-dark" data-role="input-control">
+                            <input type="date" placeholder="">
+                            <button class="btn-clear" tabindex="-1" type="button"></button>
+                        </div>
+                        <label>Password</label>
+                        <div class="input-control password bg-dark" data-role="input-control">
+                            <input type="password" placeholder="" >
+                            <button class="btn-reveal" tabindex="-1" type="button"></button>
+                        </div>
+                        <br><br>
+                        <input id="guardar" type="button" value="OK">
+                    </div>        
+                </div>
+            </div>
+            <div class="botones">
+            </div>
+        </div>
+        
+        
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="libs/jquery-1.11.1.min.js"></script>
-        <script type="text/javascript" src="libs/jquery/jquery.mobile-1.4.4.min.js"></script>        
-        <script type="text/javascript" src="libs/metroui/metro.min.js"></script>        
+        <script type="text/javascript" src="libs/jquery/jquery.mobile-1.4.4.min.js"></script>
+        <script type="text/javascript" src="libs/metroui/metro.min.js"></script>
+        <script type="text/javascript" src="libs/metroui/metro-rating.js"></script>
+        <script type="text/javascript" src="js/SocialSharing.js"></script>
         <script type="text/javascript">
             app.initialize();
-            /*$('.ametrocontenido').on('pageshow', function () {
+            //Loaders
+            $('#content-page').on('pageshow', function () {
                 loadMenu();
-            });*/
-            $(document).on("pageshow", ".ametrocontenido", function( event ) {
+                ajustarObjetos(); 
+            });
+            $('#calendario').on('pageshow', function () {
+                ajustarObjetos(); 
+            });
+            $('#lista_eventos').on('pageshow', function () {
+                ajustarObjetos(); 
+            });
+            $('#detalle_evento').on('pageshow', function () {
+                ajustarObjetos(); 
+                app.initialize();
+                $(function(){
+                    $(".rating").rating({
+                        static: false,
+                        score: 2,
+                        stars: 5,
+                        showHint: true,
+                        hints: ['mal', 'pobre', 'regular', 'bien', 'excelente'],
+                        showScore: false,
+                        scoreHint: "Calificación: ",
+                    });
+                });
+            });
+            $('#camara').on('pageshow', function () {
+                ajustarObjetos();
+                app.initialize();
+                onDeviceReady();
+            });
+            $('#registro').on('pageshow', function () {
+                ajustarObjetos(); 
+            });
+            
+            //Ajustes primera carga
+            $(document).ready(function(){
+                ajustarObjetos(); 
                 loadMenu();
+            });
+            $(window).resize(function(){
+                ajustarObjetos();
+                loadMenu();
+            });
+            $(document).on("pageshow", "#content-page", function( event ) {
+                loadMenu();
+                ajustarObjetos();
             });
             //Listeners
-            $(".calendario-eventos").click(function(){
-                cambiarPagina('calendario.html');
+            $( ":mobile-pagecontainer" ).on( "pagecontainerhide", function( event, ui ) {
+                    ajustarObjetos();
+                });
+            
+            //Links
+            //Main
+            $("#tileyoutube").click(function(){
+               window.open('https://www.youtube.com/user/ExpoGuayaquil','_system'); 
             });
-            //temporal
-            $(".calendario-eventos").click(function(){
-                cambiarPagina('calendario_lista.html');
+            $("#tileinstagram").click(function(){
+               window.open('http://instagram.com/convencionesgye','_system'); 
             });
-            $(".calendario-principal").click(function(){
-                cambiarPagina('calendario_detalle.html');
+            $("#tiletwitter").click(function(){
+               window.open('https://twitter.com/ConvencionesGye','_system'); 
             });
-            /*$("#editar_fotos").click(function(){
-                cambiarPagina('camera.html');
-            });*/
-            //Menu lateral
+            $("#tilefacebook").click(function(){
+               window.open('https://www.facebook.com/centrodeconvenciones','_system'); 
+            });
+            $("#calendario-eventos").click(function(){
+                $( ":mobile-pagecontainer" ).pagecontainer( "change", "newmain.html#calendario", { role: "page",transition:"slide",reload:true } );
+            });
+            $("#editar_fotos").click(function(){
+                $( ":mobile-pagecontainer" ).pagecontainer( "change", "newmain.html#camara", { role: "page",transition:"slide",reload:true } );
+            });
+            
+            //Calendario
+            $("#evento-principal").click(function(){
+                $( ":mobile-pagecontainer" ).pagecontainer( "change", "newmain.html#detalle_evento", { role: "page",transition:"slide",reload:true } );
+            });
+            $("#calendario_mes").click(function(){
+                $( ":mobile-pagecontainer" ).pagecontainer( "change", "newmain.html#lista_eventos", { role: "page",transition:"slide",reload:true } );
+            });
+            $("#calendario_tipo").click(function(){
+                $( ":mobile-pagecontainer" ).pagecontainer( "change", "newmain.html#lista_eventos", { role: "page",transition:"slide",reload:true } );
+            });
+            $("#calendario_todos").click(function(){
+                $( ":mobile-pagecontainer" ).pagecontainer( "change", "newmain.html#lista_eventos", { role: "page",transition:"slide",reload:true } );
+            });
+            //lista eventos
+            //tmp
+            $(".evento").click(function(){
+                $( ":mobile-pagecontainer" ).pagecontainer( "change", "newmain.html#detalle_evento", { role: "page",transition:"slide",reload:true } );
+            });
+            //Detalle evento
+            $("#sharefacebook").click(function(){
+                console.log('facebook');
+                window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)});
+                //window.plugins.socialsharing.share(‘Message only’);
+                console.log('facebook');
+            });
+            $("#sharetwitter").click(function(){
+                window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')
+            });
+            //camara
+            $("#take_picture").click(function(){
+                capturePhotoEdit();
+                //app.capturePhotoEdit();
+            });
+             
                 
         </script>
+        <style>
+            .internalrow{
+                width: 100%;
+                height: 50%;
+            }
+            .cuadro_simple{
+                width: 50%;
+                height: 100%;
+                float: left;
+                padding-right: 6px;
+            }
+            .onethird{
+                width: 33%;
+                float: left;
+                padding: 3px;
+            }
+            .twothird{
+                width: 66%;
+                float: left;
+                padding: 6px 3px 3px 3px;
+            }
+            .onethird>.tile-group>.tile{
+                width: 100%;
+                height: 50%;
+                padding-bottom: 6px!important;
+                margin-bottom: 3px!important;
+            }
+            .titulo{
+                height: 40px;
+            }
+            .botones{
+                height: 40px;
+            }
+            .centro{
+                text-align: center;
+            }
+            .doble-square{
+                width:100%;
+                padding: 3px 6px 3px 3px;
+                font-size: 1.4em;
+            }
+            .metro .rating .score-hint{
+                color:yellow!important;
+            }
+            #sharetwitter,#sharefacebook{
+                height: 30px!important;
+                width: 30px!important;
+            }
+            #sharetwitter>.icon>[class*="icon-"],#sharefacebook>.icon>[class*="icon-"]{
+                font-size: 15px;
+                text-align: center;
+                line-height: 30px;
+                padding: 0px;
+                vertical-align: middle;
+            }
+            .input-control{
+                height: 38px!important;
+            }            
+        </style>
         
     </body>
 </html>
